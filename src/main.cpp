@@ -7,8 +7,12 @@ int main() {
     
     while (true) {
         cout << "$ ";
-        getline(cin, input);
         
+        if (!getline(cin, input)) {
+            break;
+        }
+        
+        if (input.empty()) continue;
         if (input == "exit") break;
         
         cout << "Command: " << input << endl;
