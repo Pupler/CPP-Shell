@@ -1,6 +1,20 @@
 #include <iostream>
 #include <string>
-using namespace std;
+#include <sstream>
+#include <vector>
+using std::cout, std::endl, std::string, std::cin, std::vector, std::stringstream;
+
+vector<string> parse_command(const string& input) {
+    vector<string> args;
+    stringstream ss(input);
+    string arg;
+    
+    while (ss >> arg) {
+        args.push_back(arg);
+    }
+    
+    return args;
+}
 
 int main() {
     string input;
