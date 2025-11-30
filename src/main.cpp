@@ -4,7 +4,7 @@
 #include <vector>
 using std::cout, std::endl, std::string, std::cin, std::vector, std::stringstream;
 
-vector<string> parse_command(const string& input) {
+vector<string> parse(const string& input) {
     vector<string> args;
     stringstream ss(input);
     string arg;
@@ -30,6 +30,8 @@ int main() {
         if (input == "exit") break;
         
         cout << "Command: " << input << endl;
+
+        vector<string> args = parse(input);
     }
     
     return 0;
